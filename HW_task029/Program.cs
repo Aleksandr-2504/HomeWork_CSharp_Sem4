@@ -16,21 +16,33 @@ void RandomArr(int[] array)//метод заполнения массива сл
   }
 }
 
-/*void PrintArr(int[] d)//??здесь возник вопрос: метод вывода массива на печать не получился
+void PrintArr(int[] d)//??здесь возник вопрос: метод вывода массива на печать не получился
 {
   int count = d.Length;
   int pos = 0;
-  while (pos < count)
+  //1 способ:
+  /*while (pos < count - 1)
   {
-    //Console.WriteLine(d[pos]);
-    Console.Write($"{String.Join(", ", d[pos])}");
+    Console.Write($"{d[pos]}, ");
     pos++;
   }
-  //return d;
-} */
+  Console.Write($"{d[count - 1]}");*/
+  //2 способ: 
+  Console.Write($"{String.Join(", ", d)}");//2 способ
+  Console.Write(" -> [");
+  //pos = 0;//эта переменная здесь нужна при 1 способе
+  while (pos < count - 1)
+  {
+    Console.Write($"{d[pos]}, ");
+    pos++;
+  }
+  Console.Write($"{d[count - 1]}");
+  Console.Write("]");
+}
 
 Console.Clear();
 int[] arr = new int[8];
 RandomArr(arr);
-Console.Write($"{String.Join(", ", arr)} -> [{String.Join(", ", arr)}]");
-//PrintArr(arr); //??здесь возник вопрос: почему не проходит метод??
+PrintArr(arr); //??здесь возник вопрос: почему не проходит метод??..!!УРА разобрался!!
+/*Console.Write($"{String.Join(", ", arr)} -> [{String.Join(", ", arr)}]");*/
+//если не используется метод PrintArr, тогда используют строку выше
